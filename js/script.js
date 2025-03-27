@@ -39,3 +39,9 @@ function startCountdown() {
         }
     }, 1000);
 }
+
+// FUNZIONE CHE NASCONDE I NUMERI E MOSTRA IL FORM
+function hideNumbers() {
+    numbersList.innerHTML = '';
+    answersForm.classList.remove('d-none');
+}
