@@ -45,3 +45,22 @@ function hideNumbers() {
     numbersList.innerHTML = '';
     answersForm.classList.remove('d-none');
 }
+
+// FUNZIONE CHE CONFRONTA LE RISPOSTE DELL'UTENTE CON I NUMERI CORRETTI
+function checkAnswers(correctNumbers, userAnswers) {
+    let correctCount = 0;
+    let correctAnswers = [];
+
+    for (let i = 0; i < userAnswers.length; i++) {
+        if (correctNumbers.includes(parseInt(userAnswers[i]))) {
+            correctCount++;
+            correctAnswers.push(userAnswers[i]);
+        }
+    }
+
+    if (correctCount > 0) {
+        messageElement.textContent = `Hai indovinato ${correctCount} numeri! I numeri corretti erano: ${correctAnswers.join(', ')}`;
+    } else {
+        messageElement.textContent = 'Non hai indovinato nessun numero, riprova!';
+    }
+}
