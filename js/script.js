@@ -64,3 +64,23 @@ function checkAnswers(correctNumbers, userAnswers) {
         messageElement.textContent = 'Non hai indovinato nessun numero, riprova!';
     }
 }
+
+// FUNZIONE CHE GESTISCE L'INVIO DEL FORM E VERIFICA LE RISPOSTE
+answersForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const userAnswers = [
+        answersForm.querySelectorAll('input')[0].value,
+        answersForm.querySelectorAll('input')[1].value,
+        answersForm.querySelectorAll('input')[2].value,
+        answersForm.querySelectorAll('input')[3].value,
+        answersForm.querySelectorAll('input')[4].value
+    ];
+
+    checkAnswers(numbers, userAnswers);
+});
+
+// INIZIALIZZAZIONE DEL GIOCO
+const numbers = generateRandomNumbers();
+displayNumbers(numbers);
+startCountdown();
