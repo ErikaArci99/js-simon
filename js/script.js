@@ -15,3 +15,12 @@ function generateRandomNumbers() {
 
     return numbers;
 }
+
+// FUNZIONE CHE AGGIUNGE GLI ELEMENTI LI NEL UL
+function displayNumbers(numbers) {
+    for (let i = 0; i < numbers.length; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = numbers[i];
+        numbersList.appendChild(listItem);
+    }
+}
