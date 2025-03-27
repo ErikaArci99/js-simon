@@ -24,3 +24,18 @@ function displayNumbers(numbers) {
         numbersList.appendChild(listItem);
     }
 }
+
+// FUNZIONE CHE GESTISCE IL COUNTDOWN DI 30 SECONDI
+function startCountdown() {
+    let timeLeft = 30;
+
+    const countdownInterval = setInterval(() => {
+        countdownElement.textContent = `Tempo rimasto: ${timeLeft}s`;
+        timeLeft--;
+
+        if (timeLeft < 0) {
+            clearInterval(countdownInterval);
+            hideNumbers();
+        }
+    }, 1000);
+}
